@@ -33,7 +33,7 @@ const OrdersManager = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/orders");
+        const res = await axios.get("https://book-verse-amber.vercel.appapi/orders");
         console.log("📦 Orders fetched:", res.data);
 
         // Match your backend: it sends { success, count, orders }
@@ -93,7 +93,7 @@ const OrdersManager = () => {
     try {
       setUpdatingId(orderId);
       const res = await axios.put(
-        `http://localhost:5000/api/orders/${orderId}/status`,
+        `https://book-verse-amber.vercel.appapi/orders/${orderId}/status`,
         { status: newStatus }
       );
 
@@ -117,7 +117,7 @@ const OrdersManager = () => {
   const handleDelete = async (orderId) => {
     if (!window.confirm("Are you sure you want to delete this order?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/orders/${orderId}`);
+      await axios.delete(`https://book-verse-amber.vercel.appapi/orders/${orderId}`);
       toast.success("Order deleted");
       setOrders((prev) => prev.filter((o) => o._id !== orderId));
     } catch (err) {

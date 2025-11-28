@@ -5,7 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 // Set Axios base URL
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "http://https://book-verse-frontend-gold.vercel.app//";
 
 const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
