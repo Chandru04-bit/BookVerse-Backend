@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
     try {
       setLoading(true);
 
-      const { data } = await axios.post("/api/users/register", {
+      const { data } = await axios.post("https://book-verse-backend.vercel.app/api/users/register'", {
         name,
         email,
         password,
@@ -71,7 +71,7 @@ export const AuthProvider = ({ children }) => {
     try {
       setLoading(true);
 
-      const { data } = await axios.post("/api/users/login", {
+      const { data } = await axios.post("https://book-verse-backend.vercel.app/api/users/login", {
         email,
         password,
       });
